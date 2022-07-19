@@ -5,7 +5,7 @@ from pymongo import MongoClient
 load_dotenv()
 
 client = MongoClient(
-    f"mongodb+srv://{os.getenv('MONGO_USER')}:{os.getenv('MONGO_PASSWORD')}@cluster0.ewhet.mongodb.net/?retryWrites=true&w=majority"
+    f"mongodb+srv://{os.getenv('DB_USER')}:{os.getenv('DB_PASSWORD')}@{os.getenv('CLUSTER')}/{os.getenv('COLLECTION')}"
 )
 
 db = client.todo_app
